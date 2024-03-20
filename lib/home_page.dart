@@ -1,3 +1,4 @@
+import 'package:bloc_project_one/bloc/counter_bloc.dart';
 import 'package:bloc_project_one/cubit/counter_cubit.dart';
 import 'package:bloc_project_one/cubit/inc_dec_page.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // final counterCubit = CounterCubit();
   @override
   Widget build(BuildContext context) {
-    final counterCubit = BlocProvider.of<CounterCubit>(context);
+    // final counterCubit = BlocProvider.of<CounterCubit>(context);
+    // final counterBloc = BlocProvider.of<CounterBloc>(context);
 
     // final counter = counterCubit.state;
     // return BlocBuilder<CounterCubit, int>(
@@ -34,14 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
               const Text(
                 'You have pushed the button this many times:',
               ),
-              BlocBuilder<CounterCubit, int>(
-                  bloc: counterCubit,
+              BlocBuilder<CounterBloc, int>(
+                  // bloc: counterBloc,
                   builder: (context, counter) {
-                    return Text(
-                      '$counter',
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    );
-                  }),
+                return Text(
+                  '$counter',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                );
+              }),
             ],
           ),
         ),
